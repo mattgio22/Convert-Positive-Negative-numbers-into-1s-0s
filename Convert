@@ -1,0 +1,29 @@
+# open the text file and read the numbers into a list
+with open('numbers.txt') as f:
+  numbers = [int(x) for x in f.read().split()]
+
+# define the function that converts the numbers in the list
+def convert(numbers):
+  # create an empty list to store the converted numbers
+  converted = []
+
+  # loop through each number in the list
+  for number in numbers:
+    # if the number is negative, add 0 to the converted list
+    if number < 0:
+      converted.append(0)
+    # if the number is positive, add 1 to the converted list
+    else:
+      converted.append(1)
+
+  # return the converted list
+  return converted
+
+# call the convert() function with the numbers list as the input
+converted = convert(numbers)
+
+# convert the converted list to a string
+converted_str = "".join(str(x) for x in converted)
+
+# print the converted string
+print(converted_str)
